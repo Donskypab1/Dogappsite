@@ -154,8 +154,8 @@ document.querySelector("#order-form").addEventListener("submit", (event) => {
 		return `${quantity} x ${product.name} (${currency.format(product.price * quantity)})`;
 	});
 	const subtotal = [...cart.entries()].reduce((sum, [id, quantity]) => sum + products.find((item) => item.id === id).price * quantity, 0);
-	const body = [`Hi Good Hound,`, ``, `I'd like to request:`, ...orderLines, ``, `Subtotal: ${currency.format(subtotal)}`, ``, `Name: ${customerName}`, `Email: ${customerEmail}`, customerNote ? `Note: ${customerNote}` : "", "", "Please let me know availability, delivery, and payment details."].filter(Boolean).join("\n");
-	const emailLink = `mailto:hello@goodhound.example?subject=${encodeURIComponent("Good Hound order request")}&body=${encodeURIComponent(body)}`;
+	const body = [`Hi DoggyFave,`, ``, `I'd like to request:`, ...orderLines, ``, `Subtotal: ${currency.format(subtotal)}`, ``, `Name: ${customerName}`, `Email: ${customerEmail}`, customerNote ? `Note: ${customerNote}` : "", "", "Please let me know availability, delivery, and payment details."].filter(Boolean).join("\n");
+	const emailLink = `mailto:donskypablo@gmail.com?subject=${encodeURIComponent("Good Hound order request")}&body=${encodeURIComponent(body)}`;
 	window.location.href = emailLink;
 	document.querySelector("#form-error").hidden = true;
 	document.querySelector("#order-dialog").close();
